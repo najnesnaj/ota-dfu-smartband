@@ -58,7 +58,11 @@ python ./dfu.py -z app_dfu_package.zip -a DA:E2:C9:AB:2F:66 --secure
 TODO :
 ------------------
 once uploaded the smartwatch is no longer in dfu mode
+you can switch back to bootloader mode by holding the side button of the watch for 10 seconds
+
+
+
 since I want to use to button on the watch for other purposes 
--> Buttonless DFU
+-> Buttonless DFU would be handy
 
 
