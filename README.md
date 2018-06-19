@@ -16,7 +16,7 @@ https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v12.x.x/
 nRF5_SDK_12.3.0_d7731ad/examples/dfu/bootloader_secure/pca10028/armgcc
 secure_dfu_gcc_nrf51.ld
 
-
+----modify components/boards/pca10028.h:#define BUTTON_4       4 //side button watch
 
 ----follow this procedure
 
