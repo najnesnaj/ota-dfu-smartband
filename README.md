@@ -1,4 +1,22 @@
 # ota-dfu-smartband
+QUICK :
+
+python merge_hex.py bootloader.hex s130_nrf51_2.0.1_softdevice.hex  booter.hex
+./upload booter.hex
+
+nrfutil pkg generate --hw-version 51 --application-version 10 --application nrf51422_xxac.hex --sd-req 0x87 --key-file priv_key.pem app_dfu_package.zip
+
+the application was created using nordic SDK
+arduino lacks the dfuservice.h at least in sandeepmistry's core
+
+python ./dfu.py -z app_dfu_package.zip -a DA:E2:C9:AB:2F:66 --secure
+
+upload application over the air
+
+Note: re-enter in DFU mode by pressing side button
+===================================================
+
+
 OTA DFU nrf51822 smartwatch ID107 arduino
 
 
