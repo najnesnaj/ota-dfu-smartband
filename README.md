@@ -2,12 +2,13 @@
 QUICK :
 
 python merge_hex.py bootloader.hex s130_nrf51_2.0.1_softdevice.hex  booter.hex
+
 ./upload booter.hex
 
+
+==build a package==
 nrfutil pkg generate --hw-version 51 --application-version 10 --application nrf51422_xxac.hex --sd-req 0x87 --key-file priv_key.pem app_dfu_package.zip
 
-the application was created using nordic SDK
-arduino lacks the dfuservice.h at least in sandeepmistry's core
 
 python ./dfu.py -z app_dfu_package.zip -a DA:E2:C9:AB:2F:66 --secure
 
@@ -15,7 +16,20 @@ upload application over the air
 
 Note: re-enter in DFU mode by pressing side button
 ===================================================
+Note: 
+to create from the arduino IDE, using Sandeep Mistry his nrf5 core
 
+you have to add this 
+
+if (!B1_isPressed & !digitalRead(PIN_BUTTON1)) // if the side button is pressed 
+  {
+      sd_power_gpregret_set(0xB1); // write a value to the gpreget register 
+      NVIC_SystemReset();  //soft reset the nrf51822
+  }
+
+an example is included in this repository KX02xxxxxx.ino
+
+===================================================
 
 OTA DFU nrf51822 smartwatch ID107 arduino
 
