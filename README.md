@@ -12,10 +12,10 @@ nrfutil pkg generate --hw-version 51 --application-version 10 --application nrf5
 
 python ./dfu.py -z app_dfu_package.zip -a DA:E2:C9:AB:2F:66 --secure
 
-upload application over the air
+===upload application over the air===
 
 Note: re-enter in DFU mode by pressing side button
-===================================================
+
 Note: 
 to create from the arduino IDE, using Sandeep Mistry his nrf5 core
 
